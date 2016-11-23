@@ -1,0 +1,52 @@
+Intro:
+- angular is made of components:
+- component = 
+  template
+    - view layout
+    - created with html
+    - includes binding and directives
+  + class(properties and methods)
+    - code supporting the view
+    - created with TypeScript
+    - Properties: data
+    - Methods: logic
+  + metadata
+    - extra data for angular
+    - defined with a decorator
+
+- sample application:
+  - welcome component
+  - product list component
+    - star component
+  - product detail component
+    - star component
+  - app component
+  - product data service
+  - index.html
+
+Setting up an Angular app:
+- Manually create all the files
+  www.angular.io Quick Start
+- Download the results of those steps
+  www.angular.io Quick Start
+- AngularCli
+  https://github.com/angular/angular-cli
+
+Modules
+let's say we write a file called product.ts
+we can export that file:
+  export class Product {
+  }  
+or we can import it 
+  import { Product } from 
+  './product'
+
+MetaData:
+- A class becomes a component when we give it metadata
+- Angular uses that to instantiate the component, construct the view, and interact with the component
+
+Decorator:
+- A function that adds metadata to a class, its members or its method arguments.
+- Prefixed with an @
+- Angular has built in decorators like @Component()
+- Positioned immediately in front of the feature being decorated
