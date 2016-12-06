@@ -6,7 +6,8 @@
 // import: keyword
 // Component: Angular library module name
 // '@angular/core': Member name
-import { Component } from '@angular/core'; 
+import { Component, NgModule } from '@angular/core'; 
+import { ProductListComponent } from './products/product-list.component';
 
 // Metadata & Template
 // @Component(): decorator built into angular2
@@ -18,7 +19,58 @@ import { Component } from '@angular/core';
     selector: 'pm-app',
     template: `
         <div><h1>{{pageTitle}}</h1>
-            <div>My First Component</div>
+            <div class="panel panel-primary">
+                <!--Heading-->
+                <div class="panel-heading">
+                    {{productPageTitle}}
+                </div>
+                <!--Body-->
+                <div class="panel-body">
+                    <!--Filter-->
+                    <div class="row">
+                        <div class="col-md-2">Filter by:</div>
+                        <div class="col-md-4">
+                            <input type="text" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h3>Filtered by:</h3>
+                        </div>
+                    </div>
+                    <!--Table-->
+                    <div class="table-responsive">
+                        <table class="table"
+                            *ngIf='products && products.length'>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <button class="btn btn-primary">
+                                            Show Image
+                                        </button>
+                                    </th>
+                                    <th>Product</th>
+                                    <th>Code</th>
+                                    <th>Available</th>
+                                    <th>Price</th>
+                                    <th>5 Star Rating</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let product of products'>
+                                    <td>
+                                    </td>
+                                    <td>{{product.productName}}</td>
+                                    <td>{{ product.productCode | lowercase }}</td>
+                                    <td>{{ product.releaseDate }}</td>
+                                    <td>{{ product.price | currency:'USD':true:'1.2-2' }}</td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>       
         </div>
     `
 })
@@ -37,4 +89,57 @@ export class AppComponent {
     // string: Data Type
     // 'Acme Product Management': Default Value
     pageTitle: string = 'Acme Product Management';
+    productPageTitle: string = 'Product List';
+    products: any[] = [
+        {
+            "productId": 1,
+            "productName": "Leaf Rake",
+            "productCode": "GDN-0011",
+            "releaseDate": "March 19, 2016",
+            "description": "Leaf rake with 48-inch wooden handle.",
+            "price": 19.95,
+            "starRating": 3.2,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+        },
+        {
+            "productId": 2,
+            "productName": "Garden Cart",
+            "productCode": "GDN-0023",
+            "releaseDate": "March 18, 2016",
+            "description": "15 gallon capacity rolling garden cart",
+            "price": 32.99,
+            "starRating": 4.2,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        },
+        {
+            "productId": 5,
+            "productName": "Hammer",
+            "productCode": "TBX-0048",
+            "releaseDate": "May 21, 2016",
+            "description": "Curved claw steel hammer",
+            "price": 8.9,
+            "starRating": 4.8,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        },
+        {
+            "productId": 8,
+            "productName": "Saw",
+            "productCode": "TBX-0022",
+            "releaseDate": "May 15, 2016",
+            "description": "15-inch steel blade hand saw",
+            "price": 11.55,
+            "starRating": 3.7,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+        },
+        {
+            "productId": 10,
+            "productName": "Video Game Controller",
+            "productCode": "GMG-0042",
+            "releaseDate": "October 15, 2015",
+            "description": "Standard two-button video game controller",
+            "price": 35.95,
+            "starRating": 4.6,
+            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+        }
+    ]
  }

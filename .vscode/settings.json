@@ -4,6 +4,7 @@
 		"**/.git": true,
 		"**/.DS_Store": true,
         "**/*.js": true,
-        "**/*.map": true
+        "**/*.map": true,
+		"editor.tabSize": 2
 	}
 }
