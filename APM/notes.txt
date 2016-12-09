@@ -1,6 +1,6 @@
 Intro:
 - angular is made of components:
-- component = 
+- component =
   template
     - view layout
     - created with html
@@ -36,9 +36,9 @@ Modules
 let's say we write a file called product.ts
 we can export that file:
   export class Product {
-  }  
-or we can import it 
-  import { Product } from 
+  }
+or we can import it
+  import { Product } from
   './product'
 
 MetaData:
@@ -50,6 +50,7 @@ Decorator:
 - Prefixed with an @
 - Angular has built in decorators like @Component()
 - Positioned immediately in front of the feature being decorated
+
 
 Index.html
 - main page for the application
@@ -92,3 +93,14 @@ Import Checklist:
 
 app.components.ts = container component
 product-list.components.ts = directive component
+
+- use linked template for more html
+
+- directive component vs app component
+
+- directives is deprecated on component and I can't find a replacement. *ngFor doesn't work on tr elements
+
+- we can make custom directives and use angulars built in directives
+- we're going to explore structural directives, which are marked by asterix to start:
+*ngIf
+*ngFor
