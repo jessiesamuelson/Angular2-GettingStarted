@@ -1,3 +1,4 @@
+
 // Import
 // Before we use an external function or class we define where to find it
 // import statement is part of es6 and implemented in typescript
@@ -11,16 +12,17 @@ import { Component } from '@angular/core';
 // Metadata & Template
 // @Component(): decorator built into angular2
 // decorator is a function that takes an object
-// selector: directive name used in HTML
+// selector: directive name used in HTML (prefix with something relevant to app, in this case product management)
 // template: view layout
 // {{}} data binding
 @Component({
     selector: 'pm-app',
     template: `
         <div><h1>{{pageTitle}}</h1>
-            <div>My First Component</div>
+            <pm-products></pm-products>
         </div>
-    `
+    `,
+    inputs: ['ProductListComponent']
 })
 // ^^ no semicolon
 // Class

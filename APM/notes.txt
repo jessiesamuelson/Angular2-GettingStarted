@@ -50,3 +50,45 @@ Decorator:
 - Prefixed with an @
 - Angular has built in decorators like @Component()
 - Positioned immediately in front of the feature being decorated
+
+Index.html
+- main page for the application
+- single page application (SPA)
+- selector is the name of the component when we use it as a directive in html
+
+Component Checklist:
+- Class -> code
+- Decorator -> MetaData
+- Import what we need
+
+Class Checklist:
+- Clear name
+  - use PascalCasing
+  - Append "Component" to the name
+- export keyword (makes class accessible)
+- Data in properties
+  - Appropriate data type
+  - Appropriate default value
+  - camelCase with first letter lowercase
+- Logic in methods
+  - camelCase
+
+MetaData Checklist:
+- Component decorator:
+  - prefix with @, suffix with ()
+- selector: Component name in html
+  - prefix for clarity
+- template: view's html
+  - correct html syntax
+
+Import Checklist:
+- Defines where to find them embers this component needs
+- import keyword
+- Member name
+  -correct spelling/casing
+- Module path
+  - enclose in quotes
+  - correct spelling/casing
+
+app.components.ts = container component
+product-list.components.ts = directive component
