@@ -10,6 +10,9 @@ import { Component } from '@angular/core';
 // Class
 export class ProductListComponent {
   productPageTitle: string = 'Product List';
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+  showImage: boolean = false;
   // any represents type in typescript
   products: any[] = [
     {

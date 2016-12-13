@@ -9,6 +9,8 @@
 // '@angular/core': Member name
 import { Component, NgModule } from '@angular/core';
 import { ProductListComponent } from './products/product-list.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 // Metadata & Template
 // @Component(): decorator built into angular2
@@ -31,12 +33,14 @@ import { ProductListComponent } from './products/product-list.component';
           <div class="row">
             <div class="col-md-2">Filter by:</div>
             <div class="col-md-4">
-                <input type="text" />
+                <input type='text'
+
+                />
             </div>
           </div>
           <div class="row">
             <div class="col-md-6">
-                <h3>Filtered by:</h3>
+                <h3>Filtered by: {{listFilter}}</h3>
             </div>
           </div>
           <!--Table-->
@@ -46,8 +50,9 @@ import { ProductListComponent } from './products/product-list.component';
               <thead>
                 <tr>
                   <th>
-                    <button class="btn btn-primary">
-                      Show Image
+                    <button class="btn btn-primary"
+                            (click)='toggleImage()'>
+                      {{showImage ? 'Hide' : 'Show'}} Image
                     </button>
                   </th>
                   <th>Product</th>
@@ -60,6 +65,12 @@ import { ProductListComponent } from './products/product-list.component';
               <tbody>
                 <tr *ngFor='let product of products'>
                   <td>
+                    <img
+                      *ngIf='showImage'
+                      [src]='product.imageUrl'
+                      [title]='product.productName | uppercase'
+                      [style.width.px]='imageWidth'
+                      [style.margin.px]='imageMargin'>
                   </td>
                   <td>{{product.productName}}</td>
                   <td>{{ product.productCode | lowercase }}</td>
@@ -92,6 +103,10 @@ export class AppComponent {
   // 'Acme Product Management': Default Value
   pageTitle: string = 'Acme Product Management';
   productPageTitle: string = 'Product List';
+  imageWidth: number = 50;
+  imageMargin: number = 2;
+  showImage: boolean = false;
+  listFilter: string = 'cart';
   products: any[] = [
     {
       "productId": 1,
@@ -143,5 +158,10 @@ export class AppComponent {
       "starRating": 4.6,
       "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
     }
-  ]
+  ];
+  // Method
+  // Has no return type so we use void
+  toggleImage(): void {
+    this.showImage = !this.showImage
+  }
  }

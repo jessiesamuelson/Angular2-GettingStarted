@@ -104,3 +104,27 @@ product-list.components.ts = directive component
 - we're going to explore structural directives, which are marked by asterix to start:
 *ngIf
 *ngFor
+
+
+Property Binding:
+set property of an element to the value of the template expression
+
+binding target on the left equals enclosed in bracket
+
+We can use property binding or interpolation.
+
+Event Binding:
+Target event (left), parens
+template statement (right), quotes
+click event for example:
+<button (click)='functionName'>
+
+2 way binding:
+template on left
+class on right
+
+4 types of binding:
+Interpolation: {{pageTitle}}
+Property Binding: <img [src]= 'product.imageUrl'
+Event Binding: <button (click)='toggleImage()'>
+Two-way Binding: <input [(ngModel)]='listFilter' />

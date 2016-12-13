@@ -1,12 +1,16 @@
 0 info it worked if it ends with ok
-1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'start',
+1 verbose cli   '-w' ]
 2 info using npm@3.9.5
 3 info using node@v4.4.7
 4 verbose stack Error: ENOENT: no such file or directory, open '/Users/jessie/src/angular2/Angular2-GettingStarted/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /Users/jessie/src/angular2/Angular2-GettingStarted
-6 error Darwin 15.5.0
-7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
+6 error Darwin 15.6.0
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "start" "-w"
 8 error node v4.4.7
 9 error npm  v3.9.5
 10 error path /Users/jessie/src/angular2/Angular2-GettingStarted/package.json
